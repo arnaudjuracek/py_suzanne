@@ -3,14 +3,14 @@
 
 ###setup
 
-!(connection)[http://razzpisampler.oreilly.com/images/rpck_1101.png]
-See (http://razzpisampler.oreilly.com/ch07.html)[http://razzpisampler.oreilly.com/ch07.html]
+![connection](http://razzpisampler.oreilly.com/images/rpck_1101.png)
+See [http://razzpisampler.oreilly.com/ch07.html](http://razzpisampler.oreilly.com/ch07.html)
 
 ###installation
 
 + Download and extract to `/home/pi/Suzanne`.
 + `chmod 755 /home/pi/Suzanne/startup.sh`
-+ `sudo crontab -e` and add `@reboot sh /home/pi/Suzanne/startup.sh >/home/pi/Suzanne/logs/cronlog 2>&1` (thanks to (ScottKildall)[http://www.instructables.com/id/Raspberry-Pi-Launch-Python-script-on-startup/?ALLSTEPS])
++ `sudo crontab -e` and add `@reboot sh /home/pi/Suzanne/startup.sh >/home/pi/Suzanne/logs/cronlog 2>&1` (thanks to [ScottKildall](http://www.instructables.com/id/Raspberry-Pi-Launch-Python-script-on-startup/?ALLSTEPS))
 + `sudo reboot`
 + enjoy.
 
