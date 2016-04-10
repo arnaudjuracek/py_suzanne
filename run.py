@@ -1,15 +1,10 @@
 # ---------------------------
-# py_suzanne 1.6
+# py_suzanne 1.7
 # Arnaud Juracek
 # github.com/arnaudjuracek
 
 import RPi.GPIO as GPIO
 import glob, pygame, time, os, random
-
-# --------------------------
-# startup notification
-print 'py_suzanne started'
-os.system('omxplayer data/hello_world.aiff')
 
 # --------------------------
 # GPIO settings
@@ -47,19 +42,22 @@ def soundfiles(path):
 	return sounds
 
 # -------------------------
-# instantiate pygame.mixer, player, etc
-# see http://www.pygame.org/docs/ref/music.html#module-pygame.mixer.music
-mixer = pygame.mixer
-player = mixer.music
-mixer.init(frequency=48000, size=-16, channels=1, buffer=1024)
-
-# -------------------------
 # lid open/close listenning
 # see http://razzpisampler.oreilly.com/ch07.html
 # see http://raspi.tv/2013/rpi-gpio-basics-3-how-to-exit-gpio-programs-cleanly-avoid-warnings-and-protect-your-pi
-try: 
-	if not os.path.isfile(usb + 'debug'): 
+try:
+	if not os.path.isfile(usb + 'debug'):
+		# startup notification
+		print 'run.py: started'
 		GPIO.output(15, True)
+
+		# instantiate pygame.mixer, player, etc
+		# see http://www.pygame.org/docs/ref/music.html#module-pygame.mixer.music
+		mixer = pygame.mixer
+		player = mixer.music
+		mixer.init(frequency=48000, size=-16, channels=1, buffer=1024)
+
+		# main loop
 		while True:
 			time.sleep(.5)
 			# GPIO.input(18) == False when 18 linked to GND
@@ -71,7 +69,7 @@ try:
 			else:
 				player.fadeout(1000)
 	else:
-		print 'run.py: debug mode'
+		print 'run.py: cancelled : debug mode'
 except KeyboardInterrupt:
 	print 'run.py: interrupted.'
 except:
