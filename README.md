@@ -1,5 +1,5 @@
 ##py_suzanne
-*Play a random music file from a USB drive with a Raspberry PI when the lid of its box is openned*
+*Play a random music file from a USB drive with a Raspberry PI when the lid of its box is openned.*
 
 ###setup
 
@@ -34,5 +34,5 @@ See [http://razzpisampler.oreilly.com/ch07.html](http://razzpisampler.oreilly.co
 + Once booted, you should be able to SSH to the Raspberry PI.
 + You can red the last log file with `cat /home/pi/Suzanne/logs/cronlog`
 
--
-**Arnaud Juracek**, `GNU GENERAL PUBLIC LICENSE Version 2, June 1991`
+---
+**Arnaud Juracek**, `GNU GENERAL PUBLIC LICENSE Version 2, June 2007`
